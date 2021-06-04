@@ -87,11 +87,13 @@ const useStyles = makeStyles ((theme) =>({
 
 
 
-    function Home(){
-        const classes = useStyles();
-        const [spacing, setSpacing] = React.useState(2);
+
+
+  function Home(){
+
        // const classes = myStyle();
-      
+       const classes = useStyles();
+       const [spacing, setSpacing] = React.useState(2);
         const handleChange = (event) => {
           setSpacing(Number(event.target.value));
         };

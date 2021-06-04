@@ -4,16 +4,27 @@ import React, { useEffect, useState } from 'react';
 import Home from '../src/Home';
 import NavBar from '../src/NavBar';
 import Footer from '../src/Footer';
+import AboutUs from '../src/About Us';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+
 
 function App() {
   return (
     
-    <div className="App">
+    
+    <Router>
+    <div className="App">      
       <Header/>
-      <NavBar/>
-      <Home/>
+      <Switch>
+      {/* <Redirect to = "/home" render={props => (<Home {...props}/>)}/> */}
+      <Route exact path="/home" render={props => (<Home {...props}/>)} />
+      <Route exact path="/whoweare" render={props => (<AboutUs {...props}/>)} />
+
+      </Switch>
       <Footer/>
+      
     </div>
+    </Router>
   );
 }
 

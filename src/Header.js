@@ -1,59 +1,70 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
-import { AppBar, Button, Container, IconButton, Toolbar } from '@material-ui/core';
+import { AppBar, Button, Container, IconButton, Toolbar, Tab, Tabs, Paper} from '@material-ui/core';
+import Home from '../src/Home';
+import AboutUs from '../src/About Us';
+import { List, ListItem, ListItemText } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import PropTypes from 'prop-types';
 
 
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
     },
-    menuButton: {
-      marginRight: theme.spacing(2),
-    },
-    title: {
-      flexGrow: 1,
-    },
-
-    containerSpacing: {
-        display: 'flex',
-        justifyContent: 'space-between'
-    },
-
-    navColour: {
-        background: 'white'
-    },
-
-    buttons: {
-        position: 'absolute',
-        right: '0px',
-        indicatorColor:'primary'
-        
-//   width: 300px;
-//   border: 3px solid #73AD21;
-//   padding: '10px'
-    },
     
     logo: {
       left: '0px',
       alignContent: 'left',
       margin: '0 auto'
-    }
-
+    },
   }));
 
-  function NavigationBar(){
+
+  
+
+
+  function NavigationBar (){
+    
       const classes = useStyles();
+      const [selectedTab, setSelectedTab] = React.useState({Home});
+  const handleChange = (event, newValue) => {
+    setSelectedTab(newValue);
+  };
+
     return(
         <div className={classes.root}>
         
         <div className= {classes.logo}>
         <img src= "cmk_logo.png" alt="Web Logo" width= "100px" />
-        </div>
-                         
-                     
-      
-    </div>
+        </div>                        
+
+         <Paper square>
+      <Tabs
+        value={selectedTab}
+        textColor="secondary"
+        onChange={handleChange}
+        variant= "fullWidth"        
+      >
+        <Tab label="Home"/>
+        <Tab label="Who we are"/>
+        <Tab label="Our work" />
+        <Tab label="Ideas"/>
+        <Tab label="Get Involved"/>
+
+
+      </Tabs>
+
+    {/* map the tab to the page */}
+      {selectedTab == 0 && <Home/>}
+      {selectedTab == 1 && <AboutUs/>}
+    </Paper> 
+    </div> 
+
+    
     );
   }
 
