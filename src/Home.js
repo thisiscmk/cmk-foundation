@@ -8,7 +8,6 @@ import SafetyPicture from "../src/Gallery/safety.jpg";
 import SolarRadio from "../src/Gallery/Solar-Radio.jpg";
 import SomalianKids from "../src/Gallery/somalian-kids.jpg";
 import Meal from "../src/Gallery/meal.jpg";
-import { MicNone, NoEncryption } from '@material-ui/icons';
 
 
 const useStyles = makeStyles ((theme) =>({
@@ -208,7 +207,7 @@ const useStyles = makeStyles ((theme) =>({
         </Grid>
         <Grid item xs={6}>
           <Paper style = {styles.gridContainer} >
-          <Typography style={{marginTop: 80, fontFamily: "Arial", fontSize: 20}}>For over 10 years, the CMK Foundation has been committed to tackling the greatest inequities in our continent.</Typography>
+          <Typography style={{marginTop: 80, fontFamily: "Arial", fontSize: 20}}>For over 5 years, the CMK Foundation has been committed to tackling the greatest inequities in our continent.</Typography>
           <br></br><br></br>
           <Button variant="outlined" color="secondary">Learn more about our story</Button>
           </Paper>

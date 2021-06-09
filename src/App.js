@@ -19,7 +19,8 @@ function App() {
       {/* <Redirect to = "/home" render={props => (<Home {...props}/>)}/> */}
       <Route exact path="/home" render={props => (<Home {...props}/>)} />
       <Route exact path="/whoweare" render={props => (<AboutUs {...props}/>)} />
-
+      {/* <Route path="/" exact render={props => (<Home />)} /> */}
+      
       </Switch>
       <Footer/>
       

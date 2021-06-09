@@ -23,12 +23,15 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-
+const Nav = props =>{
+    const { match } = props;
+    const { params } = match;
+}
   
 
 
   function NavigationBar (){
-    
+      const nav = Nav;
       const classes = useStyles();
       const [selectedTab, setSelectedTab] = React.useState({Home});
   const handleChange = (event, newValue) => {

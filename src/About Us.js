@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Typography, makeStyles, Paper } from '@material-ui/core';
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
+import GridListTileBar from '@material-ui/core/GridListTileBar';
+import ListSubheader from '@material-ui/core/ListSubheader';
+import IconButton from '@material-ui/core/IconButton';
+import InfoIcon from '@material-ui/icons/Info';
+import CMK from '../src/Gallery/CMK.jpg';
 //import axios from 'axios';
 
 function HouseRules() {
@@ -12,6 +19,11 @@ function HouseRules() {
                   paddingBottom: theme.spacing(1),
                   paddingLeft: theme.spacing(2)
             },
+            gridList: {
+                  width: 500,
+                  height: 450,
+                },
+
             paper: {
                   marginTop: theme.spacing(4),
                   marginBottom: theme.spacing(4),
@@ -31,30 +43,29 @@ function HouseRules() {
             <>
                   <Container>
                         <Paper className={classes.paper} elevation={3}>
-                              <h1>HouseRules</h1>
-                              <h2>Residence Placement</h2>
-                              <p fontweight="bold"> Student Housing shall be fully responsible for the allocation and placement of students in the specific and designated residences. Single room allocations shall be done by respective Residence Coordinators guided. By the following: seniority in terms of level of study and not year of registration, participation in residence programmes, age and medical condition. Returning in-service students shall be exempted from the above rule provided they have stayed in the residence for two uninterrupted semesters before their In-service. Students who have been offered residence accommodation and who do not arrive or make payment within 3 days in accordance
-with the commencement of their academic/orientation program may forfeit their accommodation. Students may, however, in writing request an extension of the reservation of their accommodation from the HOD: Student Housing. </p>
+                              <h2 style={{fontFamily: "Arial", textAlign: "center"}}>Background story </h2>
+                              <br></br>
+                              <p style={{fontFamily: "Arial", fontSize: 19}}> We are a foundation that believes in helping the underpriviledged and giving them an equal opportunity. We believe that it is not only our responsibility as human beings, but also as christians.</p>
+                              <p style={{fontFamily: "Arial", fontSize: 19}}> Our vision was born in 2013 by the founder and CEO of the foundation, Mr Christ Kitenge Mbuyi. This was the result of his childhood experience: "I was born in a small city in the Republic of Congo called Pointed Noire. 
+                              This is a city that has not been fortunate in infrastructure and service delivery and yet I grew up with so many smart and intellectual individuals. From a very young age, I noticed that there was a lack of opportunity and I was right because my parents moved my family and I 
+                              to South Africa. I have seen my parents helping out in most if not all the communities that we have lived in. This inspired me to find a way to do the same and this foundation is a result of that."</p>
+                              <p style={{fontFamily: "Arial", fontSize: 19}}> At the CMK foundation, we believed that everyone has been created for a purpose. There is a legacy that we are all called to leave behind on this planet. However, there are factors outside of anyone's control that prevents people 
+                              from reaching their full potential: sickness, lack of opportunity, poverty, lack of education. As such, we devote all our resources into making sure that we help change the lives of as many people as we can and help them reach their potential. We believe that the best way to 
+                              leave this earth is knowing that we have accomplished everything that we are created to do.</p> <br></br>
 
-                              <h2> Board and Lodging</h2>
-                              <p>Residences open to registered students at 6:00 am on the day of the commencement of academic/orientation program. Residences are closed at18:00 pm on the day following the closing date of the June holiday of CPUT, and reopen at suppertime on the day before the reopening of the University, on the understanding that special arrangements may be made with the Residence Coordinator (RC). Students who terminate their studies or who no longer attend lectures shall vacate the residences within one day of their last lecture. Students who do not write any examinations shall vacate the residences within one day of the termination of lectures. Students who are writing
-their final examinations must depart no more than one day after their last examination, on the understanding that special arrangements may be made with the (RC) for a longer stay in the residence, if necessary.</p>
+                              <h2 style= {{textAlign: "center"}}>Leadership</h2>
+                              <p style={{fontFamily: "Arial", fontSize: 19}}> The foundation’s leaders come from a broad range of backgrounds and have a diversity of expertise and experience that spans science and technology, medicine, public policy, education, communications, law, and business. Our leaders 
+                              are guided by the foundation’s mission to create a world in which every person has the opportunity to live a healthy, productive life.</p>
 
-                              <h2>Checking-in Procedure</h2>
-                              <p>For a student to be permanently allocated to his/her room, the student must present to the residence member of staff a residence debit form obtained form (Residence Registration Point) at the Student Housing office. The student must complete a Personal Information Check in form, as well as sign a Residence Student undertaking Form. The 1st year and 1st time students must be issued with a package containing the Residence Policies, Rules and Regulations. Residence staff member will open the student’s room and complete the Room Inventory Form, which must be signed by the student as acknowledgement of the condition of the room and its contents.
-Having concluded the above process the student can then put his/her padlock on his or her door. </p>
-
-                              <h2>University Property & Rooms</h2>
-                              <p>The residences are the property of the University and shall not be damaged.No alterations shall be made to the buildings, equipment or furniture of the residences. In the event of destruction, damage, removal, or alterations of residence property, the said student shall compensate CPUT in amount of the damages. Special care shall be taken with regard to the cleanliness of rooms, bathrooms and toilets. Nothing shall be pasted, plugged or nailed to walls, cupboards or doors. Residence students are responsible for the cleanliness of their own rooms. RC’s will carry out room inspections at any time in line with the accommodation rules as stipulated in the Student Rules
-                              and Code of Conduct. Residence students are strictly prohibited from making any alterations to or affecting any work to the electrical equipment or telephone equipment of the residences. Students’ own electrical appliances may only be used with the approval of the RC. Food will only be prepared in officially designated areas. The RM shall control access to the laundry machines with the assistance of the HC/RSA. The control system best suited for a residence must be displayed on the House Rules plugged on the Notice Board of each and every residence. It is an offence to sit on the laundry machines as that could lead malfunctioning of the machines. Any unauthorized use or use other than the purpose intended
-for shall be viewed as a serious transgression. Transport for medical emergencies shall be accessed through the student assistant on duty or the RC. All residence equipment, regardless of its acquisition, shall remain the possession of the residence under the guardianship of the RC. </p>
-
-                              <h2>Students' Property</h2>
-                              <p>The University or residence authorities cannot be held responsible for the damage, destruction or loss of property to a student resident. CPUT shall, however, investigate and pronounce its findings with respect to the circumstances resulting in the loss, damage or destruction of a student’s property and assist where it deems possible. Residence students’ property, especially clothes, must be properly labelled. A residence student who owns or is in possession of a firearm must hand in the firearm to the Campus Protection staff on entry and sign for it, and collect it when leaving the residences. </p>
-
-                              <h2> Checking-out Procedure</h2>
-                              <p>Residence check-out must be performed by the student in whose name the room has been allocated. Friends, relatives and roommate(s) cannot sign out for another student. Students checking out must obtain and complete the Check-out Form obtainable from their respective residence offices. The exit Inventory Form must be completed by the residence staff member. Before signing the inventory form the residence staff member must ensure that: The student has placed all rubbish and unwanted items in the dust bin; The student cleans, sweeps or mops the floor and restores the room to its condition on the check-in day; The student signs the inventory to confirm the condition of the room on the date of vacation. Failure to do so may result in the student being charged
-for damage or loss of assets after the student has left the residence. In the case of a student not returning to the CPUT for further study, a Residence Deposit Claim form must be completed and signed by the student’s RC. All completed forms, as well as the Security Access Card must be submitted to the residence office. Padlocks must be removed from the doors. </p>
+                              <GridList cellHeight={180} className={classes.gridList}>
+                              <GridListTile cols={2} style={{ height: 0, marginTop: -60 }}>
+                              </GridListTile> 
+                                    <GridListTile key={CMK}>
+                                    <img src={CMK} alt="CMK" />
+                                    <GridListTileBar title="Christ Kitenge Mbuyi" subtitle={<span>Co-chair</span>}/>
+                              </GridListTile>        
+                              </GridList>
+      
                         </Paper>
                   </Container>
             </>
