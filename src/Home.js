@@ -1,4 +1,4 @@
-import { AppBar, Button, Container, IconButton, Toolbar, Paper } from '@material-ui/core';
+import { AppBar, Button, Container, IconButton, Toolbar, Paper, Link } from '@material-ui/core';
 import React from 'react';
 import {Card, CardActionArea, CardActions, CardContent, CardMedia, Typography} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -8,13 +8,18 @@ import SafetyPicture from "../src/Gallery/safety.jpg";
 import SolarRadio from "../src/Gallery/Solar-Radio.jpg";
 import SomalianKids from "../src/Gallery/somalian-kids.jpg";
 import Meal from "../src/Gallery/meal.jpg";
+import Vaccine from "../src/CovidVaccine";
+import Goma from "../src/Gallery/goma.jpg";
+import Student from "../src/Gallery/student.jpg";
 
 
 const useStyles = makeStyles ((theme) =>({
     root: {
-      maxWidth: 300,
-      margin: 80,
-      height: 500,
+      width: 250,
+      marginTop: 80,
+      height: 470,
+      marginLeft:40,
+      marginRight:10
     },
     media: {
       height: 0,
@@ -35,6 +40,7 @@ const useStyles = makeStyles ((theme) =>({
         flexDirection: 'column',
         minHeight: 200,
   },
+  
 
     statsPaper: {
      // margin: 80,
@@ -44,17 +50,7 @@ const useStyles = makeStyles ((theme) =>({
   }));
 
   const styles = {
-    paperContainer: {
-        height: 500,
-        backgroundImage: 'url('+ BackgroundHeader+')',
-        //minHeight: 900,
-        backgroundSize: 'cover',
-        // backgroundPosition: 'center',
-        width: `calc(94vw + 24px)`,
-        margin:  -10,
-        padding: 24,
-    },
-
+    
     pictureContainer: {
       height: 404,
       backgroundImage: 'url('+ Meal+')',
@@ -84,7 +80,9 @@ const useStyles = makeStyles ((theme) =>({
       
 };
 
-
+function VaccineFunction(){
+  return(<Vaccine/>)
+}
 
 
 
@@ -92,53 +90,48 @@ const useStyles = makeStyles ((theme) =>({
 
        // const classes = myStyle();
        const classes = useStyles();
-       const [spacing, setSpacing] = React.useState(2);
-        const handleChange = (event) => {
-          setSpacing(Number(event.target.value));
-        };
+       const [component, setComponent] = React.useState();
+       
 
         return(
 
             <container>
-                <br></br>
-            <Paper style={styles.paperContainer}>                
-            </Paper>
+                
+                <div>
+                    <img src={BackgroundHeader} style={{height: 600, backgroundSize: 'cover', width: `calc(94vw + 127px)`, marginLeft:-64}}/>
+                </div>
 
-    
-    <div style={{background:"#f7ecec"}}>
+    {/* <Paper className={classes.paper} elevation={-1}> */}
+    <div style={{background:"#f7ecec", height:800}}>
       <br></br><br></br>
     <Typography gutterBottom variant="h5" component="h2">We are a non-profit organisation fighting poverty, inequality and disease in Africa</Typography>
-    <Grid container spacing={0}>
-        <Grid item xs={4}>
-        <Card className={classes.root}>
+
+    {/* First card */}
+    <Grid container spacing={30} style={{marginLeft:45}}>
+        <Grid item >
+        <Card className={classes.root} >
       <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image={SafetyPicture}
-          title="Person wearing face mask"
-          
-        />
+        <CardMedia className={classes.media} image={SafetyPicture} title="Person wearing face mask"/>
         <CardContent>
           <Typography gutterBottom variant="h6" component="h2">
           Talking to your loved ones about COVID-19 vaccines
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-          Tips for handling tough conversations with your loved ones during the ongoing pandemic.
+          Tips for handling tough conversations with your loved ones during the pandemic.
           </Typography>
-        </CardContent>
-      </CardActionArea>
-      <br></br><br></br><br></br><br></br><br></br><br></br>
-      <CardActions>
-        <Button size="small" color="secondary">
+          <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+          {/* <Button size="small" color="secondary">
           Learn More
-        </Button>
-      </CardActions>
+        </Button> */}
+        
+        <a href= '/talking-about-vaccine'> Learn More</a>
+        </CardContent>
+      </CardActionArea>      
     </Card>
-        </Grid>
 
-      
-          
-        <Grid item xs={4}>
+    {/* Second card */}
+      </Grid>          
+        <Grid item >
         <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
@@ -153,80 +146,133 @@ const useStyles = makeStyles ((theme) =>({
           <Typography variant="body2" color="textSecondary" component="p">
             Discover how the CMK Foundation has delivered radios to assist with remote learning
           </Typography>
+          <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+          {/* <Button size="small" color="secondary">
+          Learn More
+        </Button> */}
+
+        <a href = '/solar-powered-radios'>Learn More</a>
         </CardContent>
       </CardActionArea>
-      <br></br><br></br><br></br><br></br><br></br><br></br>
-      <CardActions>
-        <Button size="small" color="secondary">
+      </Card>
+      </Grid>
+
+      {/* Third card */}        
+        <Grid item >
+        <Card className={classes.root} >
+      <CardActionArea>
+        <CardMedia
+          className={classes.media}
+          image={Goma}
+          title="Congolese Child"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h6" component="h2">
+            Crisis in the DRC in the province of Goma
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+          Up to 400,000 could be displaced by new Goma eruption in DR Congo 
+          </Typography>
+          <br></br>
+          <br></br>
+          <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+          
+        <a href= '/crisis-in-goma'>
           Learn More
-        </Button>
-      </CardActions>
+        </a>
+        </CardContent>
+      </CardActionArea>
     </Card>
         </Grid>
-        <Grid item xs={4}>
+
+        {/* Last card */}
+
+        <Grid item >
         <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image={SomalianKids}
-          title="Somalian Children"
+          image={Student}
+          title="Student"
         />
         <CardContent>
           <Typography gutterBottom variant="h6" component="h2">
-            Children in Somalia suffer from acute malnutrition
+            Milestone achievement for Rwandan students
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-          Malnutrition persists in Somalia due to years of conflict, the collapse of basic social services... 
+          Four students in Rwanda discuss their preparation for exams during the Covid 19 pandemic 
           </Typography>
+          <br></br>
+          <br></br>
+          <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
           
+        <a href = '/milestone-achievement-in-rwanda'> Learn More</a>
         </CardContent>
       </CardActionArea>
-      <br></br><br></br><br></br><br></br><br></br><br></br>
-      <CardActions>
-        <Button size="small" color="secondary">
-          Learn More
-        </Button>
-      </CardActions>
     </Card>
-        </Grid>
-        
-
-    
+        </Grid>  
         
       </Grid>
       
     </div>
 
-    <br></br><br></br><br></br><br></br><br></br>
+    {/* <br></br><br></br><br></br><br></br><br></br> */}
+    {/* style={{width: `cover`}} */}
 
-    <Paper style={{width: `cover`}}>
-      
+    {/* <Paper >  */}
+      <div style={{marginTop:60}}>
     <Grid container spacing={2}>
         <Grid item xs={6}>
           <Paper style = {styles.pictureContainer}></Paper>
         </Grid>
         <Grid item xs={6}>
-          <Paper style = {styles.gridContainer} >
+          <br></br><br></br><br></br>
           <Typography style={{marginTop: 80, fontFamily: "Arial", fontSize: 20}}>For over 5 years, the CMK Foundation has been committed to tackling the greatest inequities in our continent.</Typography>
           <br></br><br></br>
-          <Button variant="outlined" color="secondary">Learn more about our story</Button>
-          </Paper>
+          <a href = '/whoweare'>Learn more about our story</a>
+          
         </Grid>
       </Grid>
-    </Paper>
+    {/* </Paper> */}
+    </div>
 
-<br></br><br></br>
-    <Paper className={classes.statsPaper}>
+<div style={{marginTop:80}}>
+    <Paper className={classes.statsPaper} elevation={-1}>
           <h1 style={{textAlign: "left", marginLeft: 100, fontFamily: "Arial"}}> Foundation Stats</h1>
           <Typography style={{textAlign: "left", marginLeft: 100}}>For the year ended December 2020, Amounts are in thousands of Rands. Value of donations total represents grants only.</Typography>
 
           <br></br><br></br><br></br><br></br>
           
-          <Typography style={{fontFamily: "Patrick Hand SC", fontSize: 55, marginLeft: 50}}>1800 &nbsp;&nbsp;&nbsp;&nbsp; R500k &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1009 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 32 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1530 </Typography>
-          <Typography style={{marginLeft: 15}}>Number of Grants &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Direct grantee support &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Grantees &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Program strategies &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Employees</Typography>
+          
 
+          <div>
+                              <Grid container spacing={1} style={{marginLeft: 50}}>
+                              <Grid item xs={2} >
+                              <Typography style={{fontFamily: "Arial", fontSize: 55}}>1800 </Typography>
+                              <Typography>Number of Grants </Typography>
+                              </Grid>
+                              <Grid item xs={2}>
+                              <Typography style={{fontFamily: "Arial", fontSize: 55}}>R500k </Typography>
+                              <Typography style={{marginLeft: 15}}>Direct grantee support </Typography>
+                              </Grid>
+                              <Grid item xs={2}>
+                              <Typography style={{fontFamily: "Arial", fontSize: 55}}>1009 </Typography>
+                              <Typography style={{marginLeft: 5}}>Grantees </Typography>
+                              </Grid>
+                              <Grid item xs={2}>
+                              <Typography style={{fontFamily: "Arial", fontSize: 55}}>32 </Typography>
+                              <Typography style={{marginLeft: 15}}>Program strategies </Typography>
+                              </Grid>
+                              <Grid item xs={2}>
+                              <Typography style={{fontFamily: "Arial", fontSize: 55}}>1530 </Typography>
+                              <Typography style={{textAlign:"center"}}>Employees </Typography>
+                              </Grid>
+                              </Grid>
+                              </div>
     </Paper>
     
+    </div>
+    {/* </Paper> */}
         </container>
 
             

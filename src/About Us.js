@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Typography, makeStyles, Paper } from '@material-ui/core';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import IconButton from '@material-ui/core/IconButton';
-import InfoIcon from '@material-ui/icons/Info';
 import CMK from '../src/Gallery/CMK.jpg';
+import Archange from '../src/Gallery/Archange.JPG';
+import Erdy from '../src/Gallery/Erdy.jpg';
+import Joy from '../src/Gallery/Joy.JPG';
+import Grid from '@material-ui/core/Grid';
+import AboutUsPic from '../src/Gallery/AboutUsPic.jpg';
 //import axios from 'axios';
 
-function HouseRules() {
+function WhoWeAre() {
       const useStyles = makeStyles((theme) => ({
             title: {
                   fontSize: 20,
@@ -34,16 +33,24 @@ function HouseRules() {
                   textAlign: "justify",
                   flexDirection: 'column',
                   minHeight: 200,
+                  // width:850
             },
+
+            
       }));
 
       const classes = useStyles();
 
       return (
             <>
+            {/* <br></br> */}
                   <Container>
-                        <Paper className={classes.paper} elevation={3}>
-                              <h2 style={{fontFamily: "Arial", textAlign: "center"}}>Background story </h2>
+                        <div>
+                              <img src={AboutUsPic} style={{height: 500, backgroundSize: 'cover', width: `calc(94vw + 70px)`, marginLeft:-64}}/>
+                        </div>
+                        <Paper className={classes.paper} elevation={-1}> 
+
+                              <h2 style={{fontFamily: "Gill Sans MT", textAlign: "center"}}>Background story </h2>
                               <br></br>
                               <p style={{fontFamily: "Arial", fontSize: 19}}> We are a foundation that believes in helping the underpriviledged and giving them an equal opportunity. We believe that it is not only our responsibility as human beings, but also as christians.</p>
                               <p style={{fontFamily: "Arial", fontSize: 19}}> Our vision was born in 2013 by the founder and CEO of the foundation, Mr Christ Kitenge Mbuyi. This was the result of his childhood experience: "I was born in a small city in the Republic of Congo called Pointed Noire. 
@@ -53,23 +60,41 @@ function HouseRules() {
                               from reaching their full potential: sickness, lack of opportunity, poverty, lack of education. As such, we devote all our resources into making sure that we help change the lives of as many people as we can and help them reach their potential. We believe that the best way to 
                               leave this earth is knowing that we have accomplished everything that we are created to do.</p> <br></br>
 
-                              <h2 style= {{textAlign: "center"}}>Leadership</h2>
+                              <h2 style= {{textAlign: "center", fontFamily: "Gill Sans MT"}}>Leadership</h2>
                               <p style={{fontFamily: "Arial", fontSize: 19}}> The foundation’s leaders come from a broad range of backgrounds and have a diversity of expertise and experience that spans science and technology, medicine, public policy, education, communications, law, and business. Our leaders 
                               are guided by the foundation’s mission to create a world in which every person has the opportunity to live a healthy, productive life.</p>
+                              <br/><br/><br/>
 
-                              <GridList cellHeight={180} className={classes.gridList}>
-                              <GridListTile cols={2} style={{ height: 0, marginTop: -60 }}>
-                              </GridListTile> 
-                                    <GridListTile key={CMK}>
-                                    <img src={CMK} alt="CMK" />
-                                    <GridListTileBar title="Christ Kitenge Mbuyi" subtitle={<span>Co-chair</span>}/>
-                              </GridListTile>        
-                              </GridList>
-      
-                        </Paper>
+                              
+
+                              <div>
+                              <Grid container spacing={2}>
+                              <Grid item xs={3} background={CMK}>
+                                    <img src={CMK} alt="CMK" style={{height:200, width: 230}}/>
+                                    <p style={{fontFamily:'Gill Sans MT', fontSize:20}}>Christ Kitenge</p>
+                                    <p style={{fontFamily:'Gill Sans MT', fontSize:12}}>Chair and Trustee</p>
+                              </Grid>
+                              <Grid item xs={3}>
+                                    <img src={Erdy} alt="Erdy" style={{height:200, width: 230}}/>
+                                    <p style={{fontFamily:'Gill Sans MT', fontSize:20}}>Erdy Kitenge</p>
+                                    <p style={{fontFamily:'Gill Sans MT', fontSize:12}}>Trustee</p>
+                              </Grid>
+                              <Grid item xs={3}>
+                                    <img src={Joy} alt="Joy" style={{height:200, width: 230}}/>
+                                    <p style={{fontFamily:'Gill Sans MT', fontSize:20}}>Joy Kitenge</p>
+                                    <p style={{fontFamily:'Gill Sans MT', fontSize:12}}>Trustee</p>
+                              </Grid>
+                              <Grid item xs={3}>
+                                    <img src={Archange} alt="Archange" style={{height:200, width: 230}}/>
+                                    <p style={{fontFamily:'Gill Sans MT', fontSize:20}}>Archange Ilunga</p>
+                                    <p style={{fontFamily:'Gill Sans MT', fontSize:12}}>Trustee</p>
+                              </Grid>
+                              </Grid>
+                              </div>
+                         </Paper> 
                   </Container>
             </>
       );
 }
 
-export default HouseRules;
+export default WhoWeAre;

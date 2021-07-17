@@ -32,7 +32,8 @@ function BottomNavigation(){
     const classes = useStyles();
 
     return (
-        <AppBar position="static" style={{background: "black", maxWidth: "150"}} >
+      <div>
+        <AppBar position="static" style={{background: "black", maxWidth: "150", height:500}} >
           <Container >
             <Toolbar>
               <div>
@@ -41,6 +42,7 @@ function BottomNavigation(){
             </Toolbar>
           </Container>
         </AppBar>
+        </div>
     )
 }
 export default BottomNavigation;

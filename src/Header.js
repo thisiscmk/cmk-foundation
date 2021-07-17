@@ -23,15 +23,11 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-const Nav = props =>{
-    const { match } = props;
-    const { params } = match;
-}
+  const routes = ["/home", "/whoweare", "/ourwork", "/ideas", "/getinvolved"];
   
 
 
   function NavigationBar (){
-      const nav = Nav;
       const classes = useStyles();
       const [selectedTab, setSelectedTab] = React.useState({Home});
   const handleChange = (event, newValue) => {
@@ -39,21 +35,21 @@ const Nav = props =>{
   };
 
     return(
-        <div className={classes.root}>
+        <div className={classes.root}> {/* Open main divider */}
         
         <div className= {classes.logo}>
         <img src= "cmk_logo.png" alt="Web Logo" width= "100px" />
-        </div>                        
-
-         <Paper square>
+        </div> 
+                               
+      <div>         
       <Tabs
         value={selectedTab}
         textColor="secondary"
         onChange={handleChange}
         variant= "fullWidth"        
       >
-        <Tab label="Home"/>
-        <Tab label="Who we are"/>
+        <Tab label="Home" component={Link} to ={routes[0]}/>
+        <Tab label="Who we are" component={Link} to ={routes[1]}/>
         <Tab label="Our work" />
         <Tab label="Ideas"/>
         <Tab label="Get Involved"/>
@@ -62,10 +58,14 @@ const Nav = props =>{
       </Tabs>
 
     {/* map the tab to the page */}
-      {selectedTab == 0 && <Home/>}
-      {selectedTab == 1 && <AboutUs/>}
-    </Paper> 
-    </div> 
+      {/* {selectedTab == 0 && <Home/>}
+      {selectedTab == 1 && <AboutUs/>} */}
+     
+    </div>
+    
+
+    </div> //Close main divider
+    
 
     
     );
