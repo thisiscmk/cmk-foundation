@@ -1,26 +1,9 @@
 import React from "react";
-import {AppBar, Typography, Container, Toolbar, Grid, Paper} from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import {Typography, Grid, Paper} from '@material-ui/core';
 import Doctor from '../src/Gallery/doctor.jpg';
 import Vaccine from "../src/Gallery/vaccinepic.jpg";
 
-const useStyles = makeStyles ((theme) => ({
-    root: {
-        textAlign: 'right'      
-    },
-    media: {
-      height: 0,
-    paddingTop: '56.25%'
-    },
-    paperCard: {
-        margin: 80,
-      },
-    footer: {
-        textAlign: "justify",
-        
-    },
-      
-  }));
+
 
   const styles = {
     
@@ -57,7 +40,7 @@ const useStyles = makeStyles ((theme) => ({
 
 
 function Ideas(){
-    const classes = useStyles();
+    
 
     return (
       <div> {/*Main divider*/}

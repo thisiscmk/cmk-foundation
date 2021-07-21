@@ -1,17 +1,15 @@
-import { AppBar, Button, Container, IconButton, Toolbar, Paper} from '@material-ui/core';
+import {Paper} from '@material-ui/core';
 import React from 'react';
-import {Card, CardActionArea, CardActions, CardContent, CardMedia, Typography} from '@material-ui/core';
+import {Card, CardActionArea, CardContent, CardMedia, Typography} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import BackgroundHeader from "../src/Gallery/charity-background1.jpg";
 import Grid from '@material-ui/core/Grid';
 import SafetyPicture from "../src/Gallery/safety.jpg";
 import SolarRadio from "../src/Gallery/Solar-Radio.jpg";
-import SomalianKids from "../src/Gallery/somalian-kids.jpg";
 import Meal from "../src/Gallery/meal.jpg";
-import Vaccine from "../src/CovidVaccine";
 import Goma from "../src/Gallery/goma.jpg";
 import Student from "../src/Gallery/student.jpg";
-import { Link } from 'react-router-dom';
+
 
 
 const useStyles = makeStyles ((theme) =>({
@@ -88,7 +86,6 @@ const useStyles = makeStyles ((theme) =>({
 
        // const classes = myStyle();
        const classes = useStyles();
-       const [component, setComponent] = React.useState();
        
 
         return(
@@ -96,7 +93,7 @@ const useStyles = makeStyles ((theme) =>({
             <container >
                 
                 <div>
-                    <img src={BackgroundHeader} style={{height: 600, backgroundSize: 'cover', width: `calc(94vw + 66px)`}}/>
+                    <img src={BackgroundHeader} alt = "Background" style={{height: 600, backgroundSize: 'cover', width: `calc(94vw + 66px)`}}/>
                 </div>
 
     {/* <Paper className={classes.paper} elevation={-1}> */}

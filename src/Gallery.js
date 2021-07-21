@@ -1,6 +1,6 @@
 import React from "react";
-import {AppBar, Typography, Container, Toolbar, Grid, Paper} from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import {Grid, Paper} from '@material-ui/core';
+//import { makeStyles } from '@material-ui/core/styles';
 import Pic1 from '../src/Gallery/pic1.png';
 import Pic2 from '../src/Gallery/pic2.jpg';
 import Pic3 from '../src/Gallery/pic3.jpg';
@@ -8,23 +8,7 @@ import Pic4 from '../src/Gallery/pic4.jpg';
 import Pic5 from '../src/Gallery/pic5.webp';
 import Pic6 from '../src/Gallery/pic6.jpg';
 
-const useStyles = makeStyles ((theme) => ({
-    root: {
-        textAlign: 'right'      
-    },
-    media: {
-      height: 0,
-    paddingTop: '56.25%'
-    },
-    paperCard: {
-        margin: 80,
-      },
-    footer: {
-        textAlign: "justify",
-        
-    },
-      
-  }));
+
 
   const styles = {
     footer: {
@@ -71,7 +55,7 @@ const useStyles = makeStyles ((theme) => ({
 
 
 function Gallery(){
-    const classes = useStyles();
+    
 
     return (
       <div>

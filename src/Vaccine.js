@@ -1,9 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Container, Typography, makeStyles, Paper } from '@material-ui/core';
-import Grid from '@material-ui/core/Grid';
-import AboutUsPic from '../src/Gallery/AboutUsPic.jpg';
-import Doctor from '../src/Gallery/doctor.jpg';
-import Graph from '../src/Gallery/graph.png';
+import React from 'react';
+import { Container, makeStyles, Paper } from '@material-ui/core';
 import Vaccine from '../src/Gallery/vaccinepic.jpg';
 //import axios from 'axios';
 

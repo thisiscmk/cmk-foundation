@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Container, Typography, makeStyles, Paper } from '@material-ui/core';
+import React from 'react';
+import { Container, makeStyles, Paper } from '@material-ui/core';
 import CMK from '../src/Gallery/CMK.jpg';
 import Archange from '../src/Gallery/Archange.JPG';
 import Erdy from '../src/Gallery/Erdy.jpg';
@@ -46,7 +46,7 @@ function WhoWeAre() {
             {/* <br></br> */}
                   <Container>
                         <div>
-                              <img src={AboutUsPic} style={{height: 600, backgroundSize: 'cover', width: `calc(94vw + 70px)`, marginLeft:-64}}/>
+                              <img src={AboutUsPic} alt = "Kids" style={{height: 600, backgroundSize: 'cover', width: `calc(94vw + 70px)`, marginLeft:-64}}/>
                         </div>
                         <Paper className={classes.paper} elevation={-1}> 
 
@@ -71,7 +71,7 @@ function WhoWeAre() {
                               <Grid container spacing={2}>
                               <Grid item xs={3} background={CMK}>
                                     <img src={CMK} alt="CMK" style={{height:200, width: 230}}/>
-                                    <p style={{fontFamily:'Gill Sans MT', fontSize:20}}>Christ Kitenge</p>
+                                    <p style={{fontFamily:'Gill Sans MT', fontSize:20}}>Chris Kitenge</p>
                                     <p style={{fontFamily:'Gill Sans MT', fontSize:12}}>Chair and Trustee</p>
                               </Grid>
                               <Grid item xs={3}>

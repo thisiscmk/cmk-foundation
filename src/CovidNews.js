@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Container, Typography, makeStyles, Paper } from '@material-ui/core';
-import Grid from '@material-ui/core/Grid';
-import AboutUsPic from '../src/Gallery/AboutUsPic.jpg';
+import React from 'react';
+import { Container, makeStyles, Paper } from '@material-ui/core';
 import Doctor from '../src/Gallery/doctor.jpg';
 import Graph from '../src/Gallery/graph.png'
 //import axios from 'axios';
@@ -44,7 +42,7 @@ function CovidNews() {
             {/* <br></br> */}
                   <Container>
                         <div>
-                              <img src={Doctor} style={{height: 700, backgroundSize: 'cover', width: `calc(94vw + 70px)`, marginLeft:-64}}/>
+                              <img src={Doctor} alt = "Doctor" style={{height: 700, backgroundSize: 'cover', width: `calc(94vw + 70px)`, marginLeft:-64}}/>
                         </div>
                         <Paper className={classes.paper} elevation={-1}> 
 

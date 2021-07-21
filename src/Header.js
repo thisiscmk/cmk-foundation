@@ -1,14 +1,9 @@
 import React from 'react';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
-import { AppBar, Button, Container, IconButton, Toolbar, Tab, Tabs, Paper} from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import { Tab, Tabs} from '@material-ui/core';
 import Home from '../src/Home';
-import AboutUs from '../src/About Us';
-import { List, ListItem, ListItemText } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import PropTypes from 'prop-types';
+
 
 
 

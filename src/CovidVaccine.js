@@ -1,48 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { Container, Typography, makeStyles, Paper } from '@material-ui/core';
-import Grid from '@material-ui/core/Grid';
+import React from 'react';
+import { Container} from '@material-ui/core';
 import Safety from '../src/Gallery/safety.jpg';
 //import axios from 'axios';
 
 function Vaccine() {
-      const useStyles = makeStyles((theme) => ({
-            title: {
-                  fontSize: 20,
-                  textAlign: "left",
-                  fontWeight: "bold",
-                  paddingTop: theme.spacing(3),
-                  paddingBottom: theme.spacing(1),
-                  paddingLeft: theme.spacing(2)
-            },
-            gridList: {
-                  width: 500,
-                  height: 450,
-                },
-
-            paper: {
-                  marginTop: theme.spacing(4),
-                  marginBottom: theme.spacing(4),
-                  paddingTop: theme.spacing(2),
-                  padding: theme.spacing(10),
-                  display: 'flex',
-                  overflow: 'hidden',
-                  textAlign: "justify",
-                  flexDirection: 'column',
-                  minHeight: 200,
-                  width:850
-            },
-
-            
-      }));
-
-      const classes = useStyles();
+  
 
       return (
             <>
             {/* <br></br> */}
                   <Container>
                         <div>
-                              <img src={Safety} style={{height: 700, backgroundSize: 'cover', width: `calc(94vw + 70px)`, marginLeft:-64, marginTop:15}}/>
+                              <img src={Safety} alt= "Safety pic" style={{height: 700, backgroundSize: 'cover', width: `calc(94vw + 70px)`, marginLeft:-64, marginTop:15}}/>
                         </div>
                         {/* <Paper className={classes.paper} elevation={-1}>  */}
 <div style={{marginLeft:170, textAlign:'justify', width:850, marginTop:80}}>

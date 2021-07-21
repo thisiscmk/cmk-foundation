@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Container, Typography, makeStyles, Paper } from '@material-ui/core';
-import Grid from '@material-ui/core/Grid';
-import AboutUsPic from '../src/Gallery/AboutUsPic.jpg';
+import React from 'react';
+import { Container, makeStyles, Paper } from '@material-ui/core';
 import Kids from '../src/Gallery/kids.jpg';
 //import axios from 'axios';
 
@@ -43,7 +41,7 @@ function WhatWeDo() {
             {/* <br></br> */}
                   <Container>
                         <div>
-                              <img src={Kids} style={{height: 700, backgroundSize: 'cover', width: `calc(94vw + 70px)`, marginLeft:-64}}/>
+                              <img src={Kids} alt = "kids" style={{height: 700, backgroundSize: 'cover', width: `calc(94vw + 70px)`, marginLeft:-64}}/>
                         </div>
                         <Paper className={classes.paper} elevation={-1}> 
 

@@ -1,6 +1,6 @@
 import './App.css';
 import Header from '../src/Header';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Home from '../src/Home';
 import Footer from '../src/Footer';
 import AboutUs from '../src/About Us';
@@ -13,7 +13,7 @@ import Ideas from "../src/Ideas";
 import Gallery from "../src/Gallery";
 import CovidNews from "../src/CovidNews";
 import Vaccine from '../src/Vaccine';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 
 function App() {
