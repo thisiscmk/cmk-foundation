@@ -46,7 +46,7 @@ function WhoWeAre() {
             {/* <br></br> */}
                   <Container>
                         <div>
-                              <img src={AboutUsPic} style={{height: 500, backgroundSize: 'cover', width: `calc(94vw + 70px)`, marginLeft:-64}}/>
+                              <img src={AboutUsPic} style={{height: 600, backgroundSize: 'cover', width: `calc(94vw + 70px)`, marginLeft:-64}}/>
                         </div>
                         <Paper className={classes.paper} elevation={-1}> 
 

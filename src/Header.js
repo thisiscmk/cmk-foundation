@@ -11,19 +11,27 @@ import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
 
 
+
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
     },
     
     logo: {
-      left: '0px',
+      marginLeft: '0px',
       alignContent: 'left',
       margin: '0 auto'
     },
+
+    menuButton: {
+      marginRight: theme.spacing(2),
+    },
+    title: {
+      flexGrow: 1,
+    },
   }));
 
-  const routes = ["/home", "/whoweare", "/ourwork", "/ideas", "/getinvolved"];
+  const routes = ["/home", "/whoweare", "/ourwork", "/ideas", "/gallery"];
   
 
 
@@ -38,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
         <div className={classes.root}> {/* Open main divider */}
         
         <div className= {classes.logo}>
-        <img src= "cmk_logo.png" alt="Web Logo" width= "100px" />
+        <img src= "full_logo.png" alt="Web Logo" width= "150px" marginLeft="10px"/>
         </div> 
                                
       <div>         
@@ -46,13 +54,14 @@ const useStyles = makeStyles((theme) => ({
         value={selectedTab}
         textColor="secondary"
         onChange={handleChange}
-        variant= "fullWidth"        
+        //variant= "fullWidth"        
       >
         <Tab label="Home" component={Link} to ={routes[0]}/>
         <Tab label="Who we are" component={Link} to ={routes[1]}/>
-        <Tab label="Our work" />
-        <Tab label="Ideas"/>
-        <Tab label="Get Involved"/>
+        <Tab label="Our work" component={Link} to ={routes[2]}/>
+        <Tab label="Ideas" component={Link} to = {routes[3]}/>
+        <Tab label="Gallery" component = {Link} to = {routes[4]}/>
+        
 
 
       </Tabs>
@@ -62,6 +71,17 @@ const useStyles = makeStyles((theme) => ({
       {selectedTab == 1 && <AboutUs/>} */}
      
     </div>
+
+    {/* <div>
+      <AppBar position="static" color="white">
+        <div style={{textAlign: 'left'}}>          
+            <a href='/home' style={{background: 'white', color: 'black', textDecoration: 'none', paddingLeft: '20px', display: 'inline-block'}}>Home</a>
+            <a href='whoweare' style={{background: 'white', color: 'black', textDecoration: 'none', paddingLeft: '20px', display: 'inline-block'}}>Money</a>
+        </div>
+      </AppBar>
+    </div> */}
+
+    
     
 
     </div> //Close main divider

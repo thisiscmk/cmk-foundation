@@ -1,4 +1,4 @@
-import { AppBar, Button, Container, IconButton, Toolbar, Paper, Link } from '@material-ui/core';
+import { AppBar, Button, Container, IconButton, Toolbar, Paper} from '@material-ui/core';
 import React from 'react';
 import {Card, CardActionArea, CardActions, CardContent, CardMedia, Typography} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -11,6 +11,7 @@ import Meal from "../src/Gallery/meal.jpg";
 import Vaccine from "../src/CovidVaccine";
 import Goma from "../src/Gallery/goma.jpg";
 import Student from "../src/Gallery/student.jpg";
+import { Link } from 'react-router-dom';
 
 
 const useStyles = makeStyles ((theme) =>({
@@ -80,9 +81,6 @@ const useStyles = makeStyles ((theme) =>({
       
 };
 
-function VaccineFunction(){
-  return(<Vaccine/>)
-}
 
 
 
@@ -95,19 +93,20 @@ function VaccineFunction(){
 
         return(
 
-            <container>
+            <container >
                 
                 <div>
-                    <img src={BackgroundHeader} style={{height: 600, backgroundSize: 'cover', width: `calc(94vw + 127px)`, marginLeft:-64}}/>
+                    <img src={BackgroundHeader} style={{height: 600, backgroundSize: 'cover', width: `calc(94vw + 66px)`}}/>
                 </div>
 
     {/* <Paper className={classes.paper} elevation={-1}> */}
-    <div style={{background:"#f7ecec", height:800}}>
+    <div style={{background:"#f7ecec"}}>
       <br></br><br></br>
     <Typography gutterBottom variant="h5" component="h2">We are a non-profit organisation fighting poverty, inequality and disease in Africa</Typography>
 
+
     {/* First card */}
-    <Grid container spacing={30} style={{marginLeft:45}}>
+    <Grid container spacing={30} style={{paddingLeft: "60px"}} >
         <Grid item >
         <Card className={classes.root} >
       <CardActionArea>
@@ -132,7 +131,7 @@ function VaccineFunction(){
     {/* Second card */}
       </Grid>          
         <Grid item >
-        <Card className={classes.root}>
+        <Card className={classes.root} >
       <CardActionArea>
         <CardMedia
           className={classes.media}
@@ -213,6 +212,7 @@ function VaccineFunction(){
         </Grid>  
         
       </Grid>
+      <br></br><br></br>
       
     </div>
 
@@ -238,37 +238,37 @@ function VaccineFunction(){
 
 <div style={{marginTop:80}}>
     <Paper className={classes.statsPaper} elevation={-1}>
-          <h1 style={{textAlign: "left", marginLeft: 100, fontFamily: "Arial"}}> Foundation Stats</h1>
-          <Typography style={{textAlign: "left", marginLeft: 100}}>For the year ended December 2020, Amounts are in thousands of Rands. Value of donations total represents grants only.</Typography>
+          <h1 style={{textAlign: "left", fontFamily: "Arial", marginLeft: "50px"}}> Foundation Stats</h1>
+          <Typography style={{textAlign: "left", marginLeft: "50px"}}>  For the year ended December 2020, Amounts are in thousands of Rands. Value of donations total represents grants only.</Typography>
 
           <br></br><br></br><br></br><br></br>
           
           
 
-          <div>
-                              <Grid container spacing={1} style={{marginLeft: 50}}>
-                              <Grid item xs={2} >
+                              {/*Stats*/}
+                              <Grid container spacing={1} >
+                              <Grid item xs>
                               <Typography style={{fontFamily: "Arial", fontSize: 55}}>1800 </Typography>
                               <Typography>Number of Grants </Typography>
                               </Grid>
-                              <Grid item xs={2}>
+                              <Grid item xs>
                               <Typography style={{fontFamily: "Arial", fontSize: 55}}>R500k </Typography>
-                              <Typography style={{marginLeft: 15}}>Direct grantee support </Typography>
+                              <Typography >Direct grantee support </Typography>
                               </Grid>
-                              <Grid item xs={2}>
+                              <Grid item xs>
                               <Typography style={{fontFamily: "Arial", fontSize: 55}}>1009 </Typography>
-                              <Typography style={{marginLeft: 5}}>Grantees </Typography>
+                              <Typography >Grantees </Typography>
                               </Grid>
-                              <Grid item xs={2}>
+                              <Grid item xs>
                               <Typography style={{fontFamily: "Arial", fontSize: 55}}>32 </Typography>
-                              <Typography style={{marginLeft: 15}}>Program strategies </Typography>
+                              <Typography> Program strategies </Typography>
                               </Grid>
-                              <Grid item xs={2}>
+                              <Grid item xs>
                               <Typography style={{fontFamily: "Arial", fontSize: 55}}>1530 </Typography>
                               <Typography style={{textAlign:"center"}}>Employees </Typography>
                               </Grid>
                               </Grid>
-                              </div>
+                              
     </Paper>
     
     </div>
