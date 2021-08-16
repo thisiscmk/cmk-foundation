@@ -1,8 +1,8 @@
 import React from "react";
-import {Typography, Grid, Paper} from '@material-ui/core';
+import {Typography, Grid, Paper, Button} from '@material-ui/core';
 import Doctor from '../src/Gallery/doctor.jpg';
 import Vaccine from "../src/Gallery/vaccinepic.jpg";
-
+import { Link } from 'react-router-dom';
 
 
   const styles = {
@@ -38,6 +38,7 @@ import Vaccine from "../src/Gallery/vaccinepic.jpg";
       
 };
 
+const routes = ["/covidnews", "/vaccine"];
 
 function Ideas(){
     
@@ -50,16 +51,16 @@ function Ideas(){
           <br></br> <br></br><br></br>       
         <div>
         <Grid container spacing={2}>
-            <Grid item xs={6} >
+            <Grid item xs = {6}>
                 <Paper style = {styles.pictureContainer}>
                     
                 </Paper>
 
             </Grid>
 
-            <Grid item xs={6}>
+            <Grid item xs = {6}>
                 <h1 style={{marginTop: 80, fontFamily: "Arial", fontSize: 30}}>Coronavirus in Africa: Concern grows over third wave of infections</h1>
-                <a href = "/covidnews">Read Article</a>
+                <Button component = {Link} to = {routes[0]} > Read Article</Button>
             </Grid>
 
         </Grid>
@@ -78,7 +79,7 @@ function Ideas(){
 
             <Grid item xs={6}>
                 <h1 style={{marginTop: 80, fontFamily: "Arial", fontSize: 30}}>The COVID-19 Vaccine: Myths vs. Facts</h1>
-                <a href = "/vaccine">Read Article</a>
+                <Button component = {Link} to = {routes[1]} > Read Article</Button>
             </Grid>
 
         </Grid>

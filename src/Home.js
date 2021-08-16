@@ -1,6 +1,6 @@
 import {Paper} from '@material-ui/core';
 import React from 'react';
-import {Card, CardActionArea, CardContent, CardMedia, Typography} from '@material-ui/core';
+import {Card, CardActionArea, CardContent, CardMedia, Typography, Button} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import BackgroundHeader from "../src/Gallery/charity-background1.jpg";
 import Grid from '@material-ui/core/Grid';
@@ -9,7 +9,7 @@ import SolarRadio from "../src/Gallery/Solar-Radio.jpg";
 import Meal from "../src/Gallery/meal.jpg";
 import Goma from "../src/Gallery/goma.jpg";
 import Student from "../src/Gallery/student.jpg";
-
+import { Link } from 'react-router-dom';
 
 
 const useStyles = makeStyles ((theme) =>({
@@ -19,6 +19,14 @@ const useStyles = makeStyles ((theme) =>({
       height: 470,
       marginLeft:40,
       marginRight:10
+      
+    },
+    card:{
+      height: 200,
+      border: '0px',
+      marginLeft:40,
+      marginTop: 80,
+      marginRight:10,
     },
     media: {
       height: 0,
@@ -39,8 +47,11 @@ const useStyles = makeStyles ((theme) =>({
         flexDirection: 'column',
         minHeight: 200,
   },
-  
 
+    button: {
+      backgroundColor: '#f7ecec',
+    },
+    
     statsPaper: {
      // margin: 80,
       height: 500,
@@ -76,10 +87,16 @@ const useStyles = makeStyles ((theme) =>({
         height: 250,
       },
 
-      
+      container: {
+        height: 600,
+        backgroundImage: 'url('+ BackgroundHeader +')',
+        backgroundSize: 'cover',
+        margin:  -10,
+        padding: 24,
+    },
 };
 
-
+const routes = ["/talking-about-vaccine", "/solar-powered-radios", "/crisis-in-goma", "/milestone-achievement-in-rwanda", "/whoweare"];
 
 
   function Home(){
@@ -92,18 +109,20 @@ const useStyles = makeStyles ((theme) =>({
 
             <container >
                 
-                <div>
-                    <img src={BackgroundHeader} alt = "Background" style={{height: 600, backgroundSize: 'cover', width: `calc(94vw + 66px)`}}/>
-                </div>
+                <Paper >
+                    <img src={BackgroundHeader} alt = "Background" style={{height: 600, backgroundSize: 'cover', width: `calc(98vw + 70px)`, marginLeft:-64}}/>
+                </Paper>
 
     {/* <Paper className={classes.paper} elevation={-1}> */}
-    <div style={{background:"#f7ecec"}}>
+    <Paper style={{background:"#f7ecec"}}>
       <br></br><br></br>
     <Typography gutterBottom variant="h5" component="h2">We are a non-profit organisation fighting poverty, inequality and disease in Africa</Typography>
 
 
+    
+
     {/* First card */}
-    <Grid container spacing={30} style={{paddingLeft: "60px"}} >
+    <Grid container spacing={30} style={{paddingLeft: "20px"}} >
         <Grid item >
         <Card className={classes.root} >
       <CardActionArea>
@@ -115,12 +134,8 @@ const useStyles = makeStyles ((theme) =>({
           <Typography variant="body2" color="textSecondary" component="p">
           Tips for handling tough conversations with your loved ones during the pandemic.
           </Typography>
-          <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-          {/* <Button size="small" color="secondary">
-          Learn More
-        </Button> */}
-        
-        <a href= '/talking-about-vaccine'> Learn More</a>
+          <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+          <Button component = {Link} to = {routes[0]} className={classes.button}> Learn More</Button>
         </CardContent>
       </CardActionArea>      
     </Card>
@@ -142,12 +157,9 @@ const useStyles = makeStyles ((theme) =>({
           <Typography variant="body2" color="textSecondary" component="p">
             Discover how the CMK Foundation has delivered radios to assist with remote learning
           </Typography>
-          <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-          {/* <Button size="small" color="secondary">
-          Learn More
-        </Button> */}
+          <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+          <Button component = {Link} to = {routes[1]} className={classes.button}> Learn More</Button>
 
-        <a href = '/solar-powered-radios'>Learn More</a>
         </CardContent>
       </CardActionArea>
       </Card>
@@ -171,11 +183,9 @@ const useStyles = makeStyles ((theme) =>({
           </Typography>
           <br></br>
           <br></br>
-          <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-          
-        <a href= '/crisis-in-goma'>
-          Learn More
-        </a>
+          <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+          <Button component = {Link} to = {routes[2]} className={classes.button}> Learn More</Button>
+        
         </CardContent>
       </CardActionArea>
     </Card>
@@ -200,9 +210,8 @@ const useStyles = makeStyles ((theme) =>({
           </Typography>
           <br></br>
           <br></br>
-          <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-          
-        <a href = '/milestone-achievement-in-rwanda'> Learn More</a>
+          <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+          <Button component = {Link} to = {routes[3]} className={classes.button}> Learn More</Button>
         </CardContent>
       </CardActionArea>
     </Card>
@@ -211,13 +220,13 @@ const useStyles = makeStyles ((theme) =>({
       </Grid>
       <br></br><br></br>
       
-    </div>
+    </Paper>
 
     {/* <br></br><br></br><br></br><br></br><br></br> */}
     {/* style={{width: `cover`}} */}
 
     {/* <Paper >  */}
-      <div style={{marginTop:60}}>
+      <Paper style={{marginTop:60}}>
     <Grid container spacing={2}>
         <Grid item xs={6}>
           <Paper style = {styles.pictureContainer}></Paper>
@@ -226,12 +235,12 @@ const useStyles = makeStyles ((theme) =>({
           <br></br><br></br><br></br>
           <Typography style={{marginTop: 80, fontFamily: "Arial", fontSize: 20}}>For over 5 years, the CMK Foundation has been committed to tackling the greatest inequities in our continent.</Typography>
           <br></br><br></br>
-          <a href = '/whoweare'>Learn more about our story</a>
+          <Button component = {Link} to = {routes[4]} className={classes.button}> Learn more about our story</Button>
           
         </Grid>
       </Grid>
     {/* </Paper> */}
-    </div>
+    </Paper>
 
 <div style={{marginTop:80}}>
     <Paper className={classes.statsPaper} elevation={-1}>
@@ -241,13 +250,53 @@ const useStyles = makeStyles ((theme) =>({
           <br></br><br></br><br></br><br></br>
           
           
-
+                              {/* <Paper > */}
                               {/*Stats*/}
                               <Grid container spacing={1} >
                               <Grid item xs>
+                              <Card className={classes.card}> 
+                                <CardContent>
+                                  <Typography gutterBottom variant="h3" component="h2"> 1800 </Typography>
+                                  <Typography variant="body" component="h2"> Number of Grants </Typography>          
+                                </CardContent>
+                              </Card>
+                              </Grid>
+                              <Grid item xs>
+                              <Card className={classes.card}> 
+                                <CardContent>
+                                  <Typography gutterBottom variant="h3" component="h2"> R500k </Typography>
+                                  <Typography variant="body" component="h2"> Direct grantee support </Typography>          
+                                </CardContent>
+                              </Card>
+                              </Grid>
+                              <Grid item xs>
+                              <Card className={classes.card}> 
+                                <CardContent>
+                                  <Typography gutterBottom variant="h3" component="h2"> 1009 </Typography>
+                                  <Typography variant="body" component="h2"> Grantees </Typography>          
+                                </CardContent>
+                              </Card>
+                              </Grid>
+                              <Grid item xs>
+                              <Card className={classes.card}> 
+                                <CardContent>
+                                  <Typography gutterBottom variant="h3" component="h2"> 32 </Typography>
+                                  <Typography variant="body" component="h2"> Program Strategies </Typography>          
+                                </CardContent>
+                              </Card>
+                              </Grid>
+                              <Grid item xs>
+                              <Card className={classes.card}> 
+                                <CardContent>
+                                  <Typography gutterBottom variant="h3" component="h2"> 1530 </Typography>
+                                  <Typography variant="body" component="h2"> Employees </Typography>          
+                                </CardContent>
+                              </Card>
+                              </Grid>
+                              {/* <Paper>
                               <Typography style={{fontFamily: "Arial", fontSize: 55}}>1800 </Typography>
                               <Typography>Number of Grants </Typography>
-                              </Grid>
+                              </Paper>
                               <Grid item xs>
                               <Typography style={{fontFamily: "Arial", fontSize: 55}}>R500k </Typography>
                               <Typography >Direct grantee support </Typography>
@@ -263,9 +312,10 @@ const useStyles = makeStyles ((theme) =>({
                               <Grid item xs>
                               <Typography style={{fontFamily: "Arial", fontSize: 55}}>1530 </Typography>
                               <Typography style={{textAlign:"center"}}>Employees </Typography>
-                              </Grid>
+                              </Grid> */}
                               </Grid>
                               
+                              {/* </Paper> */}
     </Paper>
     
     </div>

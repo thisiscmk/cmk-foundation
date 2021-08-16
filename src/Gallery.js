@@ -1,5 +1,5 @@
 import React from "react";
-import {Grid, Paper} from '@material-ui/core';
+import {Grid, Paper, Card, CardMedia} from '@material-ui/core';
 //import { makeStyles } from '@material-ui/core/styles';
 import Pic1 from '../src/Gallery/pic1.png';
 import Pic2 from '../src/Gallery/pic2.jpg';
@@ -51,6 +51,15 @@ import Pic6 from '../src/Gallery/pic6.jpg';
         backgroundSize: 'cover',
         paddingLeft: 24,
     },
+
+    root: {
+        width: 250,
+        marginTop: 80,
+        height: 250,
+        marginLeft:8,
+        marginRight:10
+        
+      },
 };  
 
 
@@ -60,7 +69,7 @@ function Gallery(){
     return (
       <div>
         
-        <br></br>
+        
 
         <Grid container spacing={2}>
             <Grid item xs={4} >
@@ -92,6 +101,21 @@ function Gallery(){
 
 
         </Grid>
+
+        <Grid container spacing={2}>
+            <Grid item xs = {4}>
+                <Card className={styles.root}>
+                <CardMedia image={Pic1} title="Pic1"/>
+                </Card>
+
+            </Grid>
+
+            <Grid item xs = {4}>
+                
+            </Grid>
+
+        </Grid>
+
         </div>
     )
 }

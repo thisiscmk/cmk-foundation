@@ -1,20 +1,15 @@
 import React from "react";
-import {AppBar, Container, Toolbar} from '@material-ui/core';
+import {AppBar, Container, Paper, Toolbar} from '@material-ui/core';
 
 
 function BottomNavigation(){
 
     return (
       <div>
-        <AppBar position="static" style={{background:"#f7ecec"}} >
-          <Container >
-            <Toolbar>
-              <div>
-                <h4 style={{textAlign: "center", paddingLeft: 350, color: 'black'}}>Copyright © 2021 CMK Foundation. All rights reserved.</h4>
-              </div>
-            </Toolbar>
-          </Container>
-        </AppBar>
+       
+        <Paper style={{background:"#f7ecec", height: 70, marginTop: 300}}>
+           <h4 style={{marginTop: 50}}>Copyright © 2021 CMK Foundation. All rights reserved</h4> 
+           </Paper>
         </div>
     )
 }

@@ -40,9 +40,9 @@ function WhatWeDo() {
             <>
             {/* <br></br> */}
                   <Container>
-                        <div>
+                        <Paper>
                               <img src={Kids} alt = "kids" style={{height: 700, backgroundSize: 'cover', width: `calc(94vw + 70px)`, marginLeft:-64}}/>
-                        </div>
+                        </Paper>
                         <Paper className={classes.paper} elevation={-1}> 
 
                               <h2 style={{fontFamily: "Gill Sans MT", textAlign: "center"}}>What We Do </h2>

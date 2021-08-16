@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, makeStyles, Paper } from '@material-ui/core';
+import { CardActionArea, CardContent, CardMedia, Container, makeStyles, Paper, Typography, Card } from '@material-ui/core';
 import CMK from '../src/Gallery/CMK.jpg';
 import Archange from '../src/Gallery/Archange.JPG';
 import Erdy from '../src/Gallery/Erdy.jpg';
@@ -18,6 +18,20 @@ function WhoWeAre() {
                   paddingBottom: theme.spacing(1),
                   paddingLeft: theme.spacing(2)
             },
+
+            card:{
+                  height: 250,
+                  width: 250,
+                  marginLeft:10,
+                  marginTop: 80,
+                  marginRight:10,
+                },
+
+            media: {
+                  height: 0,
+                paddingTop: '56.25%'
+                },
+
             gridList: {
                   width: 500,
                   height: 450,
@@ -36,6 +50,14 @@ function WhoWeAre() {
                   // width:850
             },
 
+            root: {
+                  width: 250,
+                  marginTop: 80,
+                  height: 250,
+                  marginLeft:8,
+                  marginRight:10
+                  
+                },
             
       }));
 
@@ -63,34 +85,69 @@ function WhoWeAre() {
                               <h2 style= {{textAlign: "center", fontFamily: "Gill Sans MT"}}>Leadership</h2>
                               <p style={{fontFamily: "Arial", fontSize: 19}}> The foundation’s leaders come from a broad range of backgrounds and have a diversity of expertise and experience that spans science and technology, medicine, public policy, education, communications, law, and business. Our leaders 
                               are guided by the foundation’s mission to create a world in which every person has the opportunity to live a healthy, productive life.</p>
-                              <br/><br/><br/>
-
+                              
                               
 
-                              <div>
-                              <Grid container spacing={2}>
-                              <Grid item xs={3} background={CMK}>
-                                    <img src={CMK} alt="CMK" style={{height:200, width: 230}}/>
-                                    <p style={{fontFamily:'Gill Sans MT', fontSize:20}}>Chris Kitenge</p>
-                                    <p style={{fontFamily:'Gill Sans MT', fontSize:12}}>Chair and Trustee</p>
+                              
+                              <Grid container spacing={30}>
+                              <Grid item >
+                              <Card className={classes.root}>
+                                          <CardActionArea>
+                                                <CardMedia className={classes.media} image={CMK} title="CMK"/>
+                                          
+                                          <CardContent>
+                                                <Typography gutterBottom variant="h6" component="h2"> Chris Kitenge</Typography>
+                                                
+                                                <Typography variant="body2" color="textSecondary" component="p"> Chair and Trustee </Typography>
+                                                
+                                          </CardContent>
+                                          </CardActionArea>
+                                    </Card>
                               </Grid>
-                              <Grid item xs={3}>
-                                    <img src={Erdy} alt="Erdy" style={{height:200, width: 230}}/>
-                                    <p style={{fontFamily:'Gill Sans MT', fontSize:20}}>Erdy Kitenge</p>
-                                    <p style={{fontFamily:'Gill Sans MT', fontSize:12}}>Trustee</p>
+                              <Grid item >
+                              <Card className={classes.root}>
+                                          <CardActionArea>
+                                                <CardMedia className={classes.media} image={Erdy} title="Erdy"/>
+                                          
+                                          <CardContent>
+                                                <Typography gutterBottom variant="h6" component="h2"> Erdy Kitenge</Typography>
+                                                
+                                                <Typography variant="body2" color="textSecondary" component="p"> Trustee </Typography>
+                                                
+                                          </CardContent>
+                                          </CardActionArea>
+                                    </Card>
                               </Grid>
-                              <Grid item xs={3}>
-                                    <img src={Joy} alt="Joy" style={{height:200, width: 230}}/>
-                                    <p style={{fontFamily:'Gill Sans MT', fontSize:20}}>Joy Kitenge</p>
-                                    <p style={{fontFamily:'Gill Sans MT', fontSize:12}}>Trustee</p>
+                              <Grid item >
+                                    <Card className={classes.root}>
+                                          <CardActionArea>
+                                                <CardMedia className={classes.media} image={Joy} title="Joy"/>
+                                          
+                                          <CardContent>
+                                                <Typography gutterBottom variant="h6" component="h2"> Joy Kitenge</Typography>
+                                                
+                                                <Typography variant="body2" color="textSecondary" component="p"> Trustee </Typography>
+                                                
+                                          </CardContent>
+                                          </CardActionArea>
+                                    </Card>
                               </Grid>
-                              <Grid item xs={3}>
-                                    <img src={Archange} alt="Archange" style={{height:200, width: 230}}/>
-                                    <p style={{fontFamily:'Gill Sans MT', fontSize:20}}>Archange Ilunga</p>
-                                    <p style={{fontFamily:'Gill Sans MT', fontSize:12}}>Trustee</p>
+                              <Grid item>
+                                    <Card className={classes.root}>
+                                          <CardActionArea>
+                                                <CardMedia className={classes.media} image={Archange} title="Archange"/>
+                                          
+                                          <CardContent>
+                                                <Typography gutterBottom variant="h6" component="h2"> Archange Ilunga</Typography>
+                                                
+                                                <Typography variant="body2" color="textSecondary" component="p"> Trustee </Typography>
+                                                
+                                          </CardContent>
+                                          </CardActionArea>
+                                    </Card>
                               </Grid>
                               </Grid>
-                              </div>
+                              
                          </Paper> 
                   </Container>
             </>
