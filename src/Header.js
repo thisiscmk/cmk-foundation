@@ -1,8 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Tab, Tabs} from '@material-ui/core';
+import { AppBar, Tab, Tabs} from '@material-ui/core';
 import Home from '../src/Home';
 import { Link } from 'react-router-dom';
+import './Header.css';
 
 
 
@@ -12,10 +13,8 @@ const useStyles = makeStyles((theme) => ({
       flexGrow: 1,
     },
     
-    logo: {
-      marginLeft: '0px',
-      alignContent: 'left',
-      margin: '0 auto'
+    bar:{
+      top: 150,
     },
 
     menuButton: {
@@ -40,16 +39,18 @@ const useStyles = makeStyles((theme) => ({
     return(
         <div className={classes.root}> {/* Open main divider */}
         
-        <div className= {classes.logo}>
-        <img src= "full_logo.png" alt="Web Logo" width= "150px" marginLeft="10px"/>
+        <div className= "logo">
+        <img src= "full_logo.png" alt="Web Logo"/>
         </div> 
                                
-      <div>         
+      <div> 
+        <AppBar position="static" color="default" className={classes.bar}>        
       <Tabs
         value={selectedTab}
         textColor="secondary"
         onChange={handleChange}
-        //variant= "fullWidth"        
+        //variant= "fullWidth" 
+        // className="tab"     
       >
         <Tab label="Home" component={Link} to ={routes[0]}/>
         <Tab label="Who we are" component={Link} to ={routes[1]}/>
@@ -60,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
 
 
       </Tabs>
-
+      </AppBar>
     {/* map the tab to the page */}
       {/* {selectedTab == 0 && <Home/>}
       {selectedTab == 1 && <AboutUs/>} */}

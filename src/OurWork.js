@@ -19,10 +19,10 @@ function WhatWeDo() {
                 },
 
             paper: {
-                  marginTop: theme.spacing(4),
-                  marginBottom: theme.spacing(4),
-                  paddingTop: theme.spacing(2),
-                  padding: theme.spacing(10),
+                  // marginTop: theme.spacing(4),
+                  // marginBottom: theme.spacing(4),
+                  // paddingTop: theme.spacing(2),
+                  // padding: theme.spacing(10),
                   display: 'flex',
                   overflow: 'hidden',
                   textAlign: "justify",
@@ -30,7 +30,18 @@ function WhatWeDo() {
                   minHeight: 200,
                   // width:850
             },
+            picture: {
+                  height: 700,
+                  width: `calc(94vw + 70px)`,
+                  marginLeft:-64,
+                  [theme.breakpoints.down('sm')]: {
+                  height: 200,
+                  width: '300',
+                  marginLeft:-64,
 
+
+                  }
+            }, 
             
       }));
 
@@ -41,7 +52,7 @@ function WhatWeDo() {
             {/* <br></br> */}
                   <Container>
                         <Paper>
-                              <img src={Kids} alt = "kids" style={{height: 700, backgroundSize: 'cover', width: `calc(94vw + 70px)`, marginLeft:-64}}/>
+                              <img src={Kids} alt = "kids" className={classes.picture}/>
                         </Paper>
                         <Paper className={classes.paper} elevation={-1}> 
 

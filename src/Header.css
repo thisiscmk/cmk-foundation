@@ -1,0 +1,21 @@
+/* .tab {
+    width: 100%;
+    
+    
+    
+}
+*/
+.logo {
+    align-content: center;
+    top: 0px;
+    
+  }
+
+
+ img {
+    width: 150px;
+    top:0px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+} 

@@ -1,6 +1,6 @@
 import {Paper} from '@material-ui/core';
 import React from 'react';
-import {Card, CardActionArea, CardContent, CardMedia, Typography, Button} from '@material-ui/core';
+import {Card, CardContent, CardMedia, Typography, Button} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import BackgroundHeader from "../src/Gallery/charity-background1.jpg";
 import Grid from '@material-ui/core/Grid';
@@ -10,6 +10,7 @@ import Meal from "../src/Gallery/meal.jpg";
 import Goma from "../src/Gallery/goma.jpg";
 import Student from "../src/Gallery/student.jpg";
 import { Link } from 'react-router-dom';
+import './Home.css';
 
 
 const useStyles = makeStyles ((theme) =>({
@@ -18,8 +19,12 @@ const useStyles = makeStyles ((theme) =>({
       marginTop: 80,
       height: 470,
       marginLeft:40,
-      marginRight:10
-      
+      marginRight:10,
+      [theme.breakpoints.down('sm')]: {
+        height: 380,
+        width:310,
+        marginLeft:20,
+      }
     },
     card:{
       height: 200,
@@ -27,6 +32,13 @@ const useStyles = makeStyles ((theme) =>({
       marginLeft:40,
       marginTop: 80,
       marginRight:10,
+      [theme.breakpoints.down('sm')]: {
+        height: 100,
+        width: '100%',
+        marginLeft: 10,
+        marginTop: 40,
+        marginRight:10,
+      }
     },
     media: {
       height: 0,
@@ -35,6 +47,14 @@ const useStyles = makeStyles ((theme) =>({
     paperCard: {
         height: 500,
         background: '#dedbdb'
+      },
+      picture: {
+          height: 600,
+          width: '100%',
+          [theme.breakpoints.down('sm')]: {
+          height: 200,
+          
+    },
       },
       paper: {
         marginTop: theme.spacing(4),
@@ -48,53 +68,84 @@ const useStyles = makeStyles ((theme) =>({
         minHeight: 200,
   },
 
+  pictureContainer: {
+    height: 404,
+    backgroundImage: 'url('+ Meal+')',
+    //minHeight: 900,
+    backgroundSize: 'cover',
+    // backgroundPosition: 'center',
+    //width: `calc(94vw + 24px)`,
+    margin:  -10,
+    padding: 24,
+    [theme.breakpoints.down('sm')]: {
+      height: 200,
+    }
+},
+
+
+
     button: {
-      backgroundColor: '#f7ecec',
+      backgroundColor: '#f7ecec',  
+      marginTop: 140, 
+      [theme.breakpoints.down('sm')]: {
+        marginTop:40,
+      }        
     },
     
     statsPaper: {
      // margin: 80,
       height: 500,
     },
+
+    historypicDiv:{
+      [theme.breakpoints.down('sm')]: {
+        height: 200,
+      }
+    },
+    historyDiv:{
+      marginTop: 80, 
+      fontFamily: "Arial", 
+      fontSize: 20,
+      [theme.breakpoints.down('sm')]: {
+        marginTop:0,
+        fontSize: 15,
+      }
+    },
+
+    historyDivButton:{
+      backgroundColor: '#f7ecec',
+      [theme.breakpoints.down('sm')]: {
+        marginTop: 0,
+        
+      }
+    },
+
+    gridStat:{
+      [theme.breakpoints.down('sm')]: {
+        marginTop: 40,        
+      }
+      
+    },
+
+    gridStatHeading: {
+      [theme.breakpoints.down('sm')]: {
+        fontSize: 40,        
+      }
+
+    },
+
+      gridStatSubHeading: {
+        [theme.breakpoints.down('sm')]: {
+          fontSize: 13,        
+        }  
+      
+    },
+
+    
       
   }));
 
-  const styles = {
-    
-    pictureContainer: {
-      height: 404,
-      backgroundImage: 'url('+ Meal+')',
-      //minHeight: 900,
-      backgroundSize: 'cover',
-      // backgroundPosition: 'center',
-      //width: `calc(94vw + 24px)`,
-      margin:  -10,
-      padding: 24,
-  },
-
-  gridContainer: {
-    height: 400,
-    margin: -9,
-    padding: 26,
-    textAlign: "justify",
-    width: 600
-},
-
-    root: {
-        maxWidth: 345,
-      },
-      media: {
-        height: 250,
-      },
-
-      container: {
-        height: 600,
-        backgroundImage: 'url('+ BackgroundHeader +')',
-        backgroundSize: 'cover',
-        margin:  -10,
-        padding: 24,
-    },
-};
+  
 
 const routes = ["/talking-about-vaccine", "/solar-powered-radios", "/crisis-in-goma", "/milestone-achievement-in-rwanda", "/whoweare"];
 
@@ -107,14 +158,14 @@ const routes = ["/talking-about-vaccine", "/solar-powered-radios", "/crisis-in-g
 
         return(
 
-            <container >
+            <div id="container" className="container" >
                 
-                <Paper >
-                    <img src={BackgroundHeader} alt = "Background" style={{height: 600, backgroundSize: 'cover', width: `calc(98vw + 70px)`, marginLeft:-64}}/>
-                </Paper>
+                <div >
+                    <img className= {classes.picture} src={BackgroundHeader} alt = "Background" />
+                </div>
 
     {/* <Paper className={classes.paper} elevation={-1}> */}
-    <Paper style={{background:"#f7ecec"}}>
+    <div style={{background:"#f7ecec"}}>
       <br></br><br></br>
     <Typography gutterBottom variant="h5" component="h2">We are a non-profit organisation fighting poverty, inequality and disease in Africa</Typography>
 
@@ -125,26 +176,26 @@ const routes = ["/talking-about-vaccine", "/solar-powered-radios", "/crisis-in-g
     <Grid container spacing={30} style={{paddingLeft: "20px"}} >
         <Grid item >
         <Card className={classes.root} >
-      <CardActionArea>
+      
         <CardMedia className={classes.media} image={SafetyPicture} title="Person wearing face mask"/>
         <CardContent>
           <Typography gutterBottom variant="h6" component="h2">
-          Talking to your loved ones about COVID-19 vaccines
+          Talking to your loved ones about the vaccine
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
           Tips for handling tough conversations with your loved ones during the pandemic.
           </Typography>
-          <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+          
           <Button component = {Link} to = {routes[0]} className={classes.button}> Learn More</Button>
         </CardContent>
-      </CardActionArea>      
+           
     </Card>
 
     {/* Second card */}
       </Grid>          
         <Grid item >
         <Card className={classes.root} >
-      <CardActionArea>
+      
         <CardMedia
           className={classes.media}
           image={SolarRadio}
@@ -155,20 +206,20 @@ const routes = ["/talking-about-vaccine", "/solar-powered-radios", "/crisis-in-g
             Solar-powered radios support remote learning  
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Discover how the CMK Foundation has delivered radios to assist with remote learning
+            Discover how the Foundation has delivered radios to assist with remote learning
           </Typography>
-          <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+          
           <Button component = {Link} to = {routes[1]} className={classes.button}> Learn More</Button>
 
         </CardContent>
-      </CardActionArea>
+      
       </Card>
       </Grid>
 
       {/* Third card */}        
         <Grid item >
         <Card className={classes.root} >
-      <CardActionArea>
+      
         <CardMedia
           className={classes.media}
           image={Goma}
@@ -181,13 +232,11 @@ const routes = ["/talking-about-vaccine", "/solar-powered-radios", "/crisis-in-g
           <Typography variant="body2" color="textSecondary" component="p">
           Up to 400,000 could be displaced by new Goma eruption in DR Congo 
           </Typography>
-          <br></br>
-          <br></br>
-          <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+          
           <Button component = {Link} to = {routes[2]} className={classes.button}> Learn More</Button>
         
         </CardContent>
-      </CardActionArea>
+      
     </Card>
         </Grid>
 
@@ -195,7 +244,7 @@ const routes = ["/talking-about-vaccine", "/solar-powered-radios", "/crisis-in-g
 
         <Grid item >
         <Card className={classes.root}>
-      <CardActionArea>
+      
         <CardMedia
           className={classes.media}
           image={Student}
@@ -206,90 +255,88 @@ const routes = ["/talking-about-vaccine", "/solar-powered-radios", "/crisis-in-g
             Milestone achievement for Rwandan students
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-          Four students in Rwanda discuss their preparation for exams during the Covid 19 pandemic 
+          Students in Rwanda discuss their preparation for exams during the pandemic 
           </Typography>
-          <br></br>
-          <br></br>
-          <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+          
           <Button component = {Link} to = {routes[3]} className={classes.button}> Learn More</Button>
         </CardContent>
-      </CardActionArea>
+      
     </Card>
         </Grid>  
         
       </Grid>
       <br></br><br></br>
       
-    </Paper>
+    </div>
 
     {/* <br></br><br></br><br></br><br></br><br></br> */}
     {/* style={{width: `cover`}} */}
 
     {/* <Paper >  */}
-      <Paper style={{marginTop:60}}>
+      <div style={{marginTop:60}} className={classes.historypicDiv}>
     <Grid container spacing={2}>
         <Grid item xs={6}>
-          <Paper style = {styles.pictureContainer}></Paper>
+          <Paper className = {classes.pictureContainer}></Paper>
         </Grid>
         <Grid item xs={6}>
           <br></br><br></br><br></br>
-          <Typography style={{marginTop: 80, fontFamily: "Arial", fontSize: 20}}>For over 5 years, the CMK Foundation has been committed to tackling the greatest inequities in our continent.</Typography>
-          <br></br><br></br>
-          <Button component = {Link} to = {routes[4]} className={classes.button}> Learn more about our story</Button>
+          <Typography className={classes.historyDiv}>For over 5 years, the CMK Foundation has been committed to tackling the greatest inequities in our continent.</Typography>
+          <br></br>
+          <Button component = {Link} to = {routes[4]} className={classes.historyDivButton}> Learn more</Button>
           
         </Grid>
       </Grid>
     {/* </Paper> */}
-    </Paper>
+    </div>
 
-<div style={{marginTop:80}}>
+<div style={{marginTop:100}}>
     <Paper className={classes.statsPaper} elevation={-1}>
-          <h1 style={{textAlign: "left", fontFamily: "Arial", marginLeft: "50px"}}> Foundation Stats</h1>
+          <h1 > Foundation Stats</h1>
           <Typography style={{textAlign: "left", marginLeft: "50px"}}>  For the year ended December 2020, Amounts are in thousands of Rands. Value of donations total represents grants only.</Typography>
 
-          <br></br><br></br><br></br><br></br>
+          
           
           
                               {/* <Paper > */}
                               {/*Stats*/}
-                              <Grid container spacing={1} >
+                              <Grid container spacing={1} className={classes.gridStat}>
                               <Grid item xs>
                               <Card className={classes.card}> 
                                 <CardContent>
-                                  <Typography gutterBottom variant="h3" component="h2"> 1800 </Typography>
-                                  <Typography variant="body" component="h2"> Number of Grants </Typography>          
+                                  <Typography gutterBottom variant="h3" component="h2" className={classes.gridStatHeading}> 1800 </Typography>
+                                  <Typography variant="body" component="h2" className={classes.gridStatSubHeading}> Number of Grants </Typography>          
                                 </CardContent>
                               </Card>
                               </Grid>
                               <Grid item xs>
                               <Card className={classes.card}> 
                                 <CardContent>
-                                  <Typography gutterBottom variant="h3" component="h2"> R500k </Typography>
-                                  <Typography variant="body" component="h2"> Direct grantee support </Typography>          
+                                  <Typography gutterBottom variant="h3" component="h2" className={classes.gridStatHeading}> R500k </Typography>
+                                  <Typography variant="body" component="h2" className={classes.gridStatSubHeading}> Direct grantee support </Typography>          
                                 </CardContent>
                               </Card>
                               </Grid>
                               <Grid item xs>
                               <Card className={classes.card}> 
                                 <CardContent>
-                                  <Typography gutterBottom variant="h3" component="h2"> 1009 </Typography>
-                                  <Typography variant="body" component="h2"> Grantees </Typography>          
+                                  <Typography gutterBottom variant="h3" component="h2" className={classes.gridStatHeading}> 1009 </Typography>
+                                  <Typography variant="body" component="h2" className={classes.gridStatSubHeading}> Grantees </Typography>          
                                 </CardContent>
                               </Card>
                               </Grid>
                               <Grid item xs>
                               <Card className={classes.card}> 
                                 <CardContent>
-                                  <Typography gutterBottom variant="h3" component="h2"> 32 </Typography>
-                                  <Typography variant="body" component="h2"> Program Strategies </Typography>          
+                                  <Typography gutterBottom variant="h3" component="h2" className={classes.gridStatHeading}> 32 </Typography>
+                                  <Typography variant="body" component="h2" className={classes.gridStatSubHeading}> Program Strategies </Typography>          
                                 </CardContent>
                               </Card>
                               </Grid>
                               <Grid item xs>
                               <Card className={classes.card}> 
                                 <CardContent>
-                                  <Typography gutterBottom variant="h3" component="h2"> 1530 </Typography>
-                                  <Typography variant="body" component="h2"> Employees </Typography>          
+                                  <Typography gutterBottom variant="h3" component="h2" className={classes.gridStatHeading}> 1530 </Typography>
+                                  <Typography variant="body" component="h2" className={classes.gridStatSubHeading}> Employees </Typography>          
                                 </CardContent>
                               </Card>
                               </Grid>
@@ -320,7 +367,7 @@ const routes = ["/talking-about-vaccine", "/solar-powered-radios", "/crisis-in-g
     
     </div>
     {/* </Paper> */}
-        </container>
+        </div>
 
             
         )

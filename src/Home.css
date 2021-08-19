@@ -1,0 +1,32 @@
+@media only screen and (max-device-width: 812px){
+
+.picture {
+    height: 300px;
+    width: 100%;
+} 
+}
+
+/* .container {
+    /* width: 100%; */
+    /* overflow: auto; */
+    /* position: absolute;  */
+    /* top: 144px;  */
+    /* bottom: 0;
+    height: auto; */
+
+img.pic1 {
+        height: 600px;
+        width: 100%;
+        background-size: contain;
+    } 
+
+h1{ 
+    font-family: "Arial"; 
+    margin-left: 50px;
+    text-align: left;
+    /* left: auto; */
+}
+
+.container{
+    max-width: 100%;
+}

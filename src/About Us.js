@@ -6,6 +6,7 @@ import Erdy from '../src/Gallery/Erdy.jpg';
 import Joy from '../src/Gallery/Joy.JPG';
 import Grid from '@material-ui/core/Grid';
 import AboutUsPic from '../src/Gallery/AboutUsPic.jpg';
+import './About Us.css';
 //import axios from 'axios';
 
 function WhoWeAre() {
@@ -38,16 +39,23 @@ function WhoWeAre() {
                 },
 
             paper: {
-                  marginTop: theme.spacing(4),
-                  marginBottom: theme.spacing(4),
-                  paddingTop: theme.spacing(2),
-                  padding: theme.spacing(10),
-                  display: 'flex',
+                  // marginTop: theme.spacing(4),
+                  // marginBottom: theme.spacing(4),
+                  // paddingTop: theme.spacing(2),
+                  // padding: theme.spacing(10),
+                  // display: 'flex',
                   overflow: 'hidden',
                   textAlign: "justify",
                   flexDirection: 'column',
                   minHeight: 200,
                   // width:850
+
+                  // [theme.breakpoints.down('sm')]: {
+                  //       marginLeft: 1,
+                  //       spacing: 0,
+                  //       marginRight: 1,
+                  //       textAlign: 'left'        
+                  //     }
             },
 
             root: {
@@ -58,6 +66,24 @@ function WhoWeAre() {
                   marginRight:10
                   
                 },
+
+            picture: {
+                  height: 600,
+                  width: `calc(94vw + 70px)`,
+                  marginLeft:-64,
+                  [theme.breakpoints.down('sm')]: {
+                  height: 200,
+                  width: '300',
+                  marginLeft:-64,
+
+
+                  }
+            }, 
+            
+            
+            grid:{
+                  marginLeft: 30,
+            },
             
       }));
 
@@ -66,30 +92,30 @@ function WhoWeAre() {
       return (
             <>
             {/* <br></br> */}
-                  <Container>
+            <Container>
                         <div>
-                              <img src={AboutUsPic} alt = "Kids" style={{height: 600, backgroundSize: 'cover', width: `calc(94vw + 70px)`, marginLeft:-64}}/>
+                              <img src={AboutUsPic} alt = "Kids" className={classes.picture}/>
                         </div>
                         <Paper className={classes.paper} elevation={-1}> 
 
-                              <h2 style={{fontFamily: "Gill Sans MT", textAlign: "center"}}>Background story </h2>
+                              <h2>Background story </h2>
                               <br></br>
-                              <p style={{fontFamily: "Arial", fontSize: 19}}> We are a foundation that believes in helping the underpriviledged and giving them an equal opportunity. We believe that it is not only our responsibility as human beings, but also as christians.</p>
-                              <p style={{fontFamily: "Arial", fontSize: 19}}> Our vision was born in 2013 by the founder and CEO of the foundation, Mr Christ Kitenge Mbuyi. This was the result of his childhood experience: "I was born in a small city in the Republic of Congo called Pointed Noire. 
+                              <p > We are a foundation that believes in helping the underpriviledged and giving them an equal opportunity. We believe that it is not only our responsibility as human beings, but also as christians.</p>
+                              <p > Our vision was born in 2013 by the founder and CEO of the foundation, Mr Christ Kitenge Mbuyi. This was the result of his childhood experience: "I was born in a small city in the Republic of Congo called Pointed Noire. 
                               This is a city that has not been fortunate in infrastructure and service delivery and yet I grew up with so many smart and intellectual individuals. From a very young age, I noticed that there was a lack of opportunity and I was right because my parents moved my family and I 
                               to South Africa. I have seen my parents helping out in most if not all the communities that we have lived in. This inspired me to find a way to do the same and this foundation is a result of that."</p>
-                              <p style={{fontFamily: "Arial", fontSize: 19}}> At the CMK foundation, we believed that everyone has been created for a purpose. There is a legacy that we are all called to leave behind on this planet. However, there are factors outside of anyone's control that prevents people 
+                              <p > At the CMK foundation, we believed that everyone has been created for a purpose. There is a legacy that we are all called to leave behind on this planet. However, there are factors outside of anyone's control that prevents people 
                               from reaching their full potential: sickness, lack of opportunity, poverty, lack of education. As such, we devote all our resources into making sure that we help change the lives of as many people as we can and help them reach their potential. We believe that the best way to 
                               leave this earth is knowing that we have accomplished everything that we are created to do.</p> <br></br>
 
-                              <h2 style= {{textAlign: "center", fontFamily: "Gill Sans MT"}}>Leadership</h2>
-                              <p style={{fontFamily: "Arial", fontSize: 19}}> The foundation’s leaders come from a broad range of backgrounds and have a diversity of expertise and experience that spans science and technology, medicine, public policy, education, communications, law, and business. Our leaders 
+                              <h2>Leadership</h2>
+                              <p > The foundation’s leaders come from a broad range of backgrounds and have a diversity of expertise and experience that spans science and technology, medicine, public policy, education, communications, law, and business. Our leaders 
                               are guided by the foundation’s mission to create a world in which every person has the opportunity to live a healthy, productive life.</p>
                               
                               
 
                               
-                              <Grid container spacing={30}>
+                              <Grid container spacing={30} className={classes.grid}>
                               <Grid item >
                               <Card className={classes.root}>
                                           <CardActionArea>

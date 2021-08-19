@@ -7,7 +7,7 @@ function BottomNavigation(){
     return (
       <div>
        
-        <Paper style={{background:"#f7ecec", height: 70, marginTop: 300}}>
+        <Paper style={{background:"#f7ecec", height: 70, marginTop: 200}}>
            <h4 style={{marginTop: 50}}>Copyright © 2021 CMK Foundation. All rights reserved</h4> 
            </Paper>
         </div>
