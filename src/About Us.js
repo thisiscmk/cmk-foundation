@@ -9,83 +9,85 @@ import AboutUsPic from '../src/Gallery/AboutUsPic.jpg';
 import './About Us.css';
 //import axios from 'axios';
 
+const useStyles = makeStyles((theme) => ({
+      title: {
+            fontSize: 20,
+            textAlign: "left",
+            fontWeight: "bold",
+            paddingTop: theme.spacing(3),
+            paddingBottom: theme.spacing(1),
+            paddingLeft: theme.spacing(2)
+      },
+
+      card:{
+            height: 250,
+            width: 250,
+            marginLeft:10,
+            marginTop: 80,
+            marginRight:10,
+          },
+
+      media: {
+            height: 0,
+          paddingTop: '56.25%'
+          },
+
+      gridList: {
+            width: 500,
+            height: 450,
+          },
+
+      paper: {
+            // marginTop: theme.spacing(4),
+            // marginBottom: theme.spacing(4),
+            // paddingTop: theme.spacing(2),
+            // padding: theme.spacing(10),
+            // display: 'flex',
+            overflow: 'hidden',
+            textAlign: "justify",
+            flexDirection: 'column',
+            minHeight: 200,
+            // width:850
+
+            // [theme.breakpoints.down('sm')]: {
+            //       marginLeft: 1,
+            //       spacing: 0,
+            //       marginRight: 1,
+            //       textAlign: 'left'        
+            //     }
+      },
+
+      root: {
+            width: 250,
+            marginTop: 80,
+            height: 250,
+            marginLeft:8,
+            marginRight:10
+            
+          },
+
+      picture: {
+            height: 600,
+            width: `calc(94vw + 70px)`,
+            marginLeft:-64,
+            [theme.breakpoints.down('sm')]: {
+            height: 200,
+            width: '300',
+            marginLeft:-64,
+
+
+            }
+      }, 
+      
+      
+      grid:{
+            marginLeft: 30,
+      },
+      
+}));
+
 function WhoWeAre() {
-      const useStyles = makeStyles((theme) => ({
-            title: {
-                  fontSize: 20,
-                  textAlign: "left",
-                  fontWeight: "bold",
-                  paddingTop: theme.spacing(3),
-                  paddingBottom: theme.spacing(1),
-                  paddingLeft: theme.spacing(2)
-            },
-
-            card:{
-                  height: 250,
-                  width: 250,
-                  marginLeft:10,
-                  marginTop: 80,
-                  marginRight:10,
-                },
-
-            media: {
-                  height: 0,
-                paddingTop: '56.25%'
-                },
-
-            gridList: {
-                  width: 500,
-                  height: 450,
-                },
-
-            paper: {
-                  // marginTop: theme.spacing(4),
-                  // marginBottom: theme.spacing(4),
-                  // paddingTop: theme.spacing(2),
-                  // padding: theme.spacing(10),
-                  // display: 'flex',
-                  overflow: 'hidden',
-                  textAlign: "justify",
-                  flexDirection: 'column',
-                  minHeight: 200,
-                  // width:850
-
-                  // [theme.breakpoints.down('sm')]: {
-                  //       marginLeft: 1,
-                  //       spacing: 0,
-                  //       marginRight: 1,
-                  //       textAlign: 'left'        
-                  //     }
-            },
-
-            root: {
-                  width: 250,
-                  marginTop: 80,
-                  height: 250,
-                  marginLeft:8,
-                  marginRight:10
-                  
-                },
-
-            picture: {
-                  height: 600,
-                  width: `calc(94vw + 70px)`,
-                  marginLeft:-64,
-                  [theme.breakpoints.down('sm')]: {
-                  height: 200,
-                  width: '300',
-                  marginLeft:-64,
-
-
-                  }
-            }, 
-            
-            
-            grid:{
-                  marginLeft: 30,
-            },
-            
-      }));
+      
 
       const classes = useStyles();
 

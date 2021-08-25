@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, makeStyles, Paper } from '@material-ui/core';
 import Kids from '../src/Gallery/kids.jpg';
 //import axios from 'axios';
+import './OurWork.css';
 
 function WhatWeDo() {
       const useStyles = makeStyles((theme) => ({
@@ -19,10 +20,6 @@ function WhatWeDo() {
                 },
 
             paper: {
-                  // marginTop: theme.spacing(4),
-                  // marginBottom: theme.spacing(4),
-                  // paddingTop: theme.spacing(2),
-                  // padding: theme.spacing(10),
                   display: 'flex',
                   overflow: 'hidden',
                   textAlign: "justify",
@@ -56,15 +53,15 @@ function WhatWeDo() {
                         </Paper>
                         <Paper className={classes.paper} elevation={-1}> 
 
-                              <h2 style={{fontFamily: "Gill Sans MT", textAlign: "center"}}>What We Do </h2>
+                              <h2 >What We Do </h2>
                               <br></br>
-                              <p style={{fontFamily: "Arial", fontSize: 19}}> CMK Foundation is committed to realising the rights of all children to help them build a strong foundation and have the best chance of fulfilling their potential. We believe that ensuring a happy and healthy child begins before birth: from 
+                              <p > CMK Foundation is committed to realising the rights of all children to help them build a strong foundation and have the best chance of fulfilling their potential. We believe that ensuring a happy and healthy child begins before birth: from 
                               ensuring that their mother has access to good neonatal care and delivers her baby in a clean, safe environment, to reaching adulthood as a responsible, healthy and informed parent. This journey relies on a child having access to shelter, good nutrition, clean water and sanitation, 
                               health care and education.</p>
                               
 
-                              <h2 style= {{textAlign: "center", fontFamily: "Gill Sans MT"}}>Our Programmes</h2>
-                              <ul style={{fontFamily: "Arial", fontSize: 19}}>
+                              <h2 >Our Programmes</h2>
+                              <ul >
                                     <li>Child Protection</li>
                                     <li>Education</li>
                                     <li>Child Health</li>
