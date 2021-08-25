@@ -52,7 +52,7 @@ const useStyles = makeStyles ((theme) =>({
           height: 600,
           width: '100%',
           [theme.breakpoints.down('sm')]: {
-          height: 200,
+          height: 250,
           
     },
       },

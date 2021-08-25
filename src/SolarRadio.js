@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
             width: `calc(94vw + 70px)`,
             marginLeft:-64,
             [theme.breakpoints.down('sm')]: {
-            height: 200,
+            height: 400,
             width: '300',
             marginLeft:-64,
 
